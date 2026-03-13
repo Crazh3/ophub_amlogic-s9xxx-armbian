@@ -439,7 +439,7 @@ download_depends() {
     uboot_num="$(find "${uboot_path}/rockchip" -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)"
     [[ -n "${uboot_num}" && "${uboot_num}" -le "5" ]] && {
         git_pull_dir ${uboot_repo} main u-boot ${uboot_path}
-        [[ "${?}" -eq 0 ]] && echo -e "${INFO} u-boot download completed." || error_msg "u-boot download failed."
+        [[ "${?}" -eq 0 ]] && echo -e "${INFO} u-boot  download completed. ${uboot_repo}" || error_msg "u-boot download failed."
     } || echo -e "${INFO} u-boot files exist, skip downloading."
 
     # Download Armbian firmware files
